@@ -1,0 +1,364 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>圣诞快乐</title>
+<style>
+/*	head加上图标后可能位置会变，待修改,
+	可能还有盒子层叠在head和h_empty上方
+	*/
+/*	#all        {width: 100%;height: 280%;background-color: white;}*/
+	
+	
+	#m1_all     {width: 100%;height: 280%;background-color: #223e36;z-index: auto;position: relative;left: -2%;top: auto;}
+	#m1_head    {width: 100%;height: 20% ;background-color: aqua   ;}
+/*	#h_empty {width: 100%;height: 10% ;}*/
+/*	底色删除，最后改为透明*/
+	#m1_main    {width: 100%;height: 200% ;}
+	#m1_happy   {width: 80% ;height: 50%  ;position: relative;left: 10%  ;backgrousnd-repeat: no-repeat;background-position:center,center;z-index: 1;}
+	#m1_tree    {width: 80% ;height: 50%  ;position: relative;left: 10%  ;background-repeat: no-repeat;background-position:center,center;z-index: 1;}
+	#m1_content {width: 75% ;height: 30%  ;position: relative;left: 12.5%   ;z-index: 1;}/*	底色删除，最后改为透明*/
+	#m1_man     {width: 90% ;height: 70%  ;position: absolute;left: 5%  ;bacskgrosund-repeat: no-repeat;background-position:center,center;z-index: 1;}
+	#empty      {width: 100%;min-height:40%;}
+	
+	
+	
+	
+	
+	.tree    {position: relative;left: 13.5%; width: 70%;}
+	.happy   {position: relative;left: 10%; width: 80%;}/*	将字下移一点*/
+	.man     {position: absolute;left: 32%;top:6%;width: 35%;}
+	pre      {text-align: center;color: #f8f6e7;}
+	#empty pre {color: #223e36;}
+	
+	
+	#m2      {z-index: 2;}
+	#m2_cloud{position: absolute;left: 0;top: 0;z-index: 2;height: 70%;width: 100%}
+	.cloud1  {position: absolute;left: 0;top: 0;width: 40%;filter: drop-shadow(3px 6px 40px #141414);}
+	.cloud2  {position: absolute;left: 0;top: 0;width: 38%; z-index: 3;filter: drop-shadow(3px 6px 20px #323232);}
+	
+	.cloud3  {position: absolute;right: 0;top:  0;width: 40%;filter: drop-shadow(3px 6px 40px #141414);}
+	.cloud4  {position: absolute;right: 10%;top:0;width: 50%;z-index: 3;filter: drop-shadow(3px 6px 20px #323232);}
+	.cloud5  {position: absolute;right: 0;top:  0;width: 43%;z-index: 4;filter: drop-shadow(3px 6px 20px #323232);}
+	
+	
+	#m3      {z-index: 3;}/*	雪*/
+	
+	.star   {position: absolute;left: 1.5%;top:60%;width: 100%;filter: drop-shadow(3px 6px 40px #141414);}
+	
+	.m3_star1{position: absolute;left: 45%  ;top: 41%   ;width: 10%;filter: drop-shadow(3px 6px 40px #141414);}
+	.m3_star2{position: absolute;left: 30%  ;top: 42.8% ;width: 4%;filter: drop-shadow(3px 6px 40px #141414);}
+	.m3_star3{position: absolute;left: 36.5%;top: 42.2% ;width: 6%;filter: sdrop-shadow(3px 6px 40px #141414);}
+	.m3_star4{position: absolute;right:36.5%;top: 42.2% ;width: 6%;filter: drop-shadow(3px 6px 40px #141414);}
+	.m3_star5{position: absolute;right:30%  ;top: 42.8% ;width: 4%;filter: drop-shadow(3px 6px 40px #141414);}
+	.m3_star6{position: absolute;left: 35%  ;top: 58% ;width: 4%;filter: drop-shadow(3px 6px 40px #141414);transform:rotate(120deg);}
+	.m3_star7{position: absolute;left: 45%  ;top: 58% ;width: 8%;filter: drop-shadow(3px 6px 40px #141414);transform:rotate(180deg);}
+	.m3_star8{position: absolute;right:35%  ;top: 58% ;width: 4%;filter: drop-shadow(3px 6px 40px #141414);transform:rotate(240deg);}
+	
+	.m3_c1{position: absolute;left:-1%  ;top: 13% ;width: 10%;filter: drop-shadow(3px 6px 40px #141414);}
+	.m3_c2{position: absolute;left:13%  ;top: 17% ;width: 10%;filter: drop-shadow(3px 6px 40px #141414);}
+	.m3_c3{position: absolute;right:-2% ;top: 15% ;width: 10%;filter: drop-shadow(3px 6px 40px #141414);}
+	.m3_c4{position: absolute;right:15% ;top: 18% ;width: 10%;filter: drop-shadow(3px 6px 40px #141414);}
+	
+	
+	.m3_snow1{position: absolute;left: 14%  ;top: 25% ;width: 2%;filter: drop-shadow(3px 6px 40px #141414);}
+	.m3_snow2{position: absolute;left: 28%  ;top: 30% ;width: 2%;filter: drop-shadow(3px 6px 40px #141414);}
+	.m3_snow3{position: absolute;left: 24%  ;top: 39% ;width: 2%;filter: drop-shadow(3px 6px 40px #141414);}
+	.m3_snow4{position: absolute;right: 10%  ;top: 23% ;width: 2%;filter: drop-shadow(3px 6px 40px #141414);}
+	.m3_snow5{position: absolute;right: 13%  ;top: 27% ;width: 2%;filter: drop-shadow(3px 6px 40px #141414);}
+	.m3_snow6{position: absolute;right: 24%  ;top: 35% ;width: 2%;filter: drop-shadow(3px 6px 40px #141414);}
+	.m3_snow7{position: absolute;right: 15%  ;top: 39% ;width: 2%;filter: drop-shadow(3px 6px 40px #141414);}
+	.m3_snow8{position: absolute;left: 15%  ;top: 35% ;width: 2%;filter: drop-shadow(3px 6px 40px #141414);}
+	.m3_snow9{position: absolute;left: 20%  ;top: 45% ;width: 2%;filter: drop-shadow(3px 6px 40px #141414);}
+	
+	.m3_snow10{position: absolute;left: 57%  ;top: 58% ;width: 2%;filter: drop-shadow(3px 6px 40px #141414);}
+	.m3_snow11{position: absolute;left: 38%  ;top: 50% ;width: 2%;filter: drop-shadow(3px 6px 40px #141414);}
+	.m3_snow12{position: absolute;left: 43%  ;top: 20% ;width: 2%;filter: drop-shadow(3px 6px 40px #141414);}
+	.m3_snow13{position: absolute;left: 38%  ;top: 13% ;width: 2%;filter: drop-shadow(3px 6px 40px #141414);}
+	.m3_snow14{position: absolute;left: 10%  ;top: 54% ;width: 2%;filter: drop-shadow(3px 6px 40px #141414);}
+	.m3_snow15{position: absolute;right:18%  ;top: 50% ;width: 2%;filter: drop-shadow(3px 6px 40px #141414);}
+	
+	.m3_snow16{position: absolute;left: 20%  ;top: 64% ;width: 2%;filter: drop-shadow(3px 6px 40px #141414);}
+	.m3_snow17{position: absolute;left: 45%  ;top: 62% ;width: 2%;filter: drop-shadow(3px 6px 40px #141414);}
+	.m3_snow18{position: absolute;left: 30%  ;top: 68% ;width: 2%;filter: drop-shadow(3px 6px 40px #141414);}
+	.m3_snow19{position: absolute;right:13%  ;top: 60% ;width: 2%;filter: drop-shadow(3px 6px 40px #141414);}
+	.m3_snow20{position: absolute;right:24%  ;top: 65% ;width: 2%;filter: drop-shadow(3px 6px 40px #141414);}
+	
+	.m3_snow21{position: absolute;right:18%  ;top: 72% ;width: 2%;filter: drop-shadow(3px 6px 40px #141414);}
+	.m3_snow22{position: absolute;left: 57%  ;top: 75% ;width: 2%;filter: drop-shadow(3px 6px 40px #141414);}
+	.m3_snow23{position: absolute;left: 38%  ;top: 73% ;width: 2%;filter: drop-shadow(3px 6px 40px #141414);}
+	
+	
+	#m4         {z-index: 4;}
+	.m4_cloud1  {}
+	.m6_tree1   {position: absolute;left :0%   ;top:70%; width: 25%;z-index: 6;filter:drop-shadow(0.5px 1px 15px #323232);}
+	.m2_house1  {position: absolute;left :-10% ;top:75%; width: 50%;z-index: 2;}
+	.m6_tree2   {position: absolute;right:0%   ;top:70%; width: 22%;z-index: 6;filter:drop-shadow(0.5px 1px 15px #323232);}
+	.m2_house2  {position: absolute;right:-10% ;top:75%; width: 50%;z-index: 2;}
+	
+	.m3_cloud1  {position: absolute;left :15%  ;top:88%; width: 28%;z-index: 3;}
+	.m3_cloud2  {position: absolute;right:15%  ;top:88%; width: 28%;z-index: 3;}
+	
+	.m4_cloud1  {position: absolute;left:-15%  ;top:88%; width: 50%;z-index: 4;}
+	.m4_cloud2  {position: absolute;right:-15% ;top:88%; width: 50%;z-index: 4;}
+	
+	.m5_bottom  {position: absolute;left: 10%  ;top:90%; width: 80%;z-index: 5;}
+	.m6_bottom  {position: absolute;left: 10%  ;top:90%; width: 80%;z-index: 7;filter:drop-shadow(0.5px 1px 15px #323232);}
+	
+	.m6_cloud1  {position: absolute;left:15%  ;top:96%; width: 30%;z-index: 6;}
+	.m6_cloud2  {position: absolute;right:15% ;top:96%; width: 30%;z-index: 6;}
+	
+	.m7_cloud1  {position: absolute;left:-15%  ;top:94%; width: 50%;z-index: 7;}
+	.m7_cloud2  {position: absolute;right:-15% ;top:94%; width: 50%;z-index: 7;}
+	
+	#card       {position: absolute;left: 0%   ;top:0% ;z-index: -1;}
+	
+	
+</style>
+<script>
+	  
+	  function a() {
+		  alert("正在打开礼物");
+  		  var card = document.getElementById("card");
+		  card.style.zIndex = "10";
+		  card.style.width = "0";
+		  card.style.position = "fixed";
+		  card.style.top = "50%";
+		  card.style.left = "41%";
+		  card.style.transition = "3s";
+		  card.style.transform = "translate(-50%, -50%)";
+		  setTimeout(function() {
+			  card.style.width = "80%";
+		  }, 10);
+	  }
+//完成慢慢放大的动画	
+	  
+	  function wrong(){
+		alert("正在打开礼物");
+		alert("可惜，礼物里面是空的");
+	  }
+	
+	  function resetPosition() {
+      var elements = document.querySelectorAll(":not(#card)");
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].style.width = "";
+        elements[i].style.position = "";
+        elements[i].style.top = "";
+        elements[i].style.left = "";
+        elements[i].style.transform = "";
+		elements[i].style.zIndex = "-1";
+      }
+    }
+
+</script>
+	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+	</script>
+	 <script>
+		$(document).ready(function(){
+		  $("body").click(function(){
+          var card = document.getElementById("card");
+          card.style.width = "";
+          card.style.position = "";
+          card.style.top = "";
+          card.style.left = "";
+          card.style.transform = "";
+		  card.style.zIndex = "-1";
+		  });
+		});
+		 $(document).ready(function(){
+		  $("#m3_cloud1").click(function(){
+		    event.stopPropagation();
+		  });
+		});
+		 $(document).ready(function(){
+		  $("#m3_cloud2").click(function(){
+		    event.stopPropagation();
+		  });
+		});
+		 $(document).ready(function(){
+		  $("#m1_man").click(function(){
+		    event.stopPropagation();
+		  });
+		});
+
+
+	  
+    </script>
+	
+	
+
+</head>
+
+<body>
+		
+		<div id="m1_all">
+			<img id="card" src="图片/班级贺卡.png" />
+			
+			<div id="m2_cloud">
+				<!--左边-->
+				<img class="cloud1" src="图片/立体片云1.png">
+				<img class="cloud2" src="图片/立体片云3.png">
+				<!--右边-->
+				<img class="cloud3" src="图片/立体片云2.png">
+				<img class="cloud4" src="图片/立体片云4.png">
+				<img class="cloud5" src="图片/立体片云5.png">
+			</div>
+			
+			<div id="m3">
+			<img class="star" src="图片/坠落星星.png" >
+			<img class="m3_star1" src="图片/字星星.png">
+			<img class="m3_star2" src="图片/字星星.png">
+			<img class="m3_star3" src="图片/字星星.png">
+			<img class="m3_star4" src="图片/字星星.png">
+			<img class="m3_star5" src="图片/字星星.png">
+			
+			<img class="m3_star6" src="图片/字星星.png">
+			<img class="m3_star7" src="图片/字星星.png">
+			<img class="m3_star8" src="图片/字星星.png">
+			
+			<img class="m3_c1" src="图片/云.png">
+			<img class="m3_c2" src="图片/云.png">
+			<img class="m3_c3" src="图片/云.png">
+			<img class="m3_c4" src="图片/云.png">
+				
+			<img class="m3_snow1" src="图片/雪.webp">
+			<img class="m3_snow2" src="图片/雪.webp">
+			<img class="m3_snow3" src="图片/雪.webp">
+			<img class="m3_snow4" src="图片/雪.webp">
+			<img class="m3_snow5" src="图片/雪.webp">
+			<img class="m3_snow6" src="图片/雪.webp">
+			<img class="m3_snow7" src="图片/雪.webp">
+			<img class="m3_snow8" src="图片/雪.webp">
+			<img class="m3_snow9" src="图片/雪.webp">
+				
+			<img class="m3_snow10" src="图片/雪.webp">
+			<img class="m3_snow11" src="图片/雪.webp">
+			<img class="m3_snow12" src="图片/雪.webp">
+			<img class="m3_snow13" src="图片/雪.webp">
+			<img class="m3_snow14" src="图片/雪.webp">
+			<img class="m3_snow15" src="图片/雪.webp">
+			<img class="m3_snow16" src="图片/雪.webp">
+			<img class="m3_snow17" src="图片/雪.webp">
+			<img class="m3_snow18" src="图片/雪.webp">
+			<img class="m3_snow19" src="图片/雪.webp">
+			<img class="m3_snow20" src="图片/雪.webp">
+			
+			<img class="m3_snow21" src="图片/雪.webp">
+			<img class="m3_snow22" src="图片/雪.webp">
+			<img class="m3_snow23" src="图片/雪.webp">
+			
+			</div>
+			
+			<div id="m4">
+			<img class="m6_tree1"  src="图片/右半边树.png">
+			<img class="m2_house1" src="图片/雪屋1.png">
+			<img class="m6_tree2"  src="图片/左半边树.png">
+			<img class="m2_house2" src="图片/雪屋1.png">
+			
+			
+			<img class="m3_cloud1" src="图片/波浪云1.png" usemap="#CARD_1" />
+				<map name="CARD_1" >
+    				<area shape="rect" coords="157,13,228,58"   onclick="a()" alt="左下" /> 
+				</map>
+			<img class="m3_cloud2" src="图片/波浪云1.png" usemap="CARD_2" />
+				<map name="CARD_2" >
+    				<area shape="rect" coords="0,0,78,73"  onclick="wrong()" alt="左下" /> 
+				</map>
+			<img class="m4_cloud1" src="图片/波浪云2.png">
+			<img class="m4_cloud2" src="图片/波浪云2.png">
+			
+			<img class="m6_bottom" src="图片/边.png">
+			<img class="m5_bottom" src="图片/底部2.png">
+			
+			<img class="m6_cloud1" src="图片/波浪5.png">
+			<img class="m6_cloud2" src="图片/波浪5.png">
+			
+			<img class="m7_cloud1" src="图片/波浪云3.png">
+			<img class="m7_cloud2" src="图片/波浪云3.png">
+			
+			
+			
+			</div>
+		
+		
+			<div id="m1_main">
+				<div id="empty">
+				<pre>
+				
+				
+				
+				
+				
+				</pre>
+				</div>
+				<div id="m1_happy">
+<!--				<img class="happy" src= alt="加载失败">-->
+					<img class="happy" src="图片/圣诞快乐无水印.webp" alt="加载失败" >
+				</div>
+				<div id="m1_tree">
+					<img class="tree" src = "图片/圣诞树无水印.png" alt="加载失败">
+					</div>
+			
+				<div id="m1_content" >
+
+					<pre>
+					</pre>
+					<pre><font size="7" color="#FDF5E6">
+					<hr color="#e6ae64">
+叮叮当  叮叮当
+圣诞节到喽
+圣诞快乐
+为你准备的圣诞节的礼物
+请从下方找出你的礼物吧！
+					
+					
+
+
+
+
+
+
+					
+					
+				
+					
+					
+
+			
+					</font></pre>
+				</div>
+				<div id="m1_man">
+					<img  class="man" src="图片/礼物_副本.png" border="0" usemap="#CARD" alt="礼物" />
+					<map name="CARD" >
+    				<area shape="rect" coords="23,153,157,276"  onclick="a()" alt="左下" /> 
+    				<area shape="rect" coords="56,91,144,136"  onclick="wrong()" alt="左上" /> 
+    				<area shape="rect" coords="151,11,212,153" onclick="wrong()" alt="右上" /> 
+   					<area shape="rect" coords="194,154,298,271"onclick="wrong()" alt="右下" /> 
+				</div>
+				<div id="empty">
+				<pre><font size="7">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+				</font>
+				</pre>
+				
+				</div>
+				
+				
+				
+			</div>
+		</div>
+
+</body>
+</html>
